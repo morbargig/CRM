@@ -27,15 +27,18 @@ app.use(express.static(path.join(__dirname, 'build')))
 
 app.use("/", router)
 
-app.get('*', function(req, res){
-    res.sendFile(path.join(__dirname,'build','index.html'))
+app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
-port =  3030
-DBname =  DBNAME || 'CRM'
+
+
+
+port = 3030
+DBname = DBNAME || 'CRM'
 
 mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/${DBname}`, { useNewUrlParser: true }).then(() => {
-    app.listen(process.env.PORT ||port, () => console.log(`Running server on port` + port))
+    app.listen(process.env.PORT || port, () => console.log(`Running server on port` + port))
 })
 
 

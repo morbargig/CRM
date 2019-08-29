@@ -1,0 +1,155 @@
+body{
+  background-color:  #ecf0f1;
+  
+}
+tr{
+  background-color: lightblue 
+}
+.navBar{
+  background-color: #0a1612 ;
+  color: white
+}
+.Catgories, .nestLeft{
+  background-color: darkcyan;
+}
+
+
+.rowClass:hover {
+  background-color: slategrey ;
+  color: white;
+}
+
+/* .tdClassMain{ */
+  /* text-align: center */
+/* } */
+
+.bla div{
+  display: inline-block;
+}
+
+/* .badges{
+  display: inline;
+}
+.badg{
+  display: grid;
+  grid-template-rows: repeat(3,1fr)
+} */
+.actions{
+  width: 70%
+}
+
+/* input{
+  width: 70%
+} */
+
+.newUser{
+  position: fixed;
+  height: 400px;
+  width: 500px;
+  display: grid;
+  margin:auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: navajowhite;
+  border-style: solid;
+  border-width: 3px;
+  opacity: 0.95;
+  color: #0a1612;
+}
+
+#horns{
+  color: #0a1612;
+  position: absolute;
+  background-color: #0a1612
+}
+/* .nestLeft{
+  background-color: #F7CE3E,  
+} */
+
+/* body{
+  position: relative;
+} */
+
+ /* .clientTable{
+  position: relative; 
+}  */
+
+
+
+  /* .graphs{
+    display: grid;
+    grid-template-areas: 
+    '1 2'
+    '3 4';
+  }
+
+  .graph{
+  width: 200px;
+  height: 200px;
+  }
+
+  .pie {
+    grid-area: 1;
+  }
+  .bestOwner {
+    grid-area: 2;
+  }
+  .Country {
+    grid-area: 3;
+  }
+  .newclients{
+    grid-area: 4;
+  } */
+
+
+
+
+
+.fas {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+   background-color: rgb(133, 34, 34) ;
+   color: rgb(255, 0, 0);
+   font-size: 3em;
+   padding-top: 12px;
+ margin-left: 3vw;
+ -webkit-box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.75);
+ -moz-box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.75);
+ box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.75);
+}
+
+.fas:hover {
+   -webkit-box-shadow: 2px 0px 83px 21px rgba(0,0,0,0.59);
+  -moz-box-shadow: 2px 0px 83px 21px rgba(0,0,0,0.59);
+  box-shadow: 2px 0px 83px 21px rgba(0,0,0,0.59);
+
+}
+/* .input {
+  display: flex;
+  width: 20vw;
+} */
+
+.fas #awsomeProgress{
+  background-color: rgb(46, 133, 34) ;
+
+}
+.badges {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+    text-align: center
+  
+}
+
+/* .bage{
+  -webkit-align-content: center;
+  align-content: center;
+  text-align: center;
+  position: relative
+} */
+.navbar{
+  background-color: cadetblue
+}

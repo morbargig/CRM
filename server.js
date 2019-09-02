@@ -1,5 +1,5 @@
-const DBNAME = process.env.DBNAME
-const PORT = process.env.PORT
+// const DBNAME = process.env.DBNAME
+// const PORT = process.env.PORT
 // const request = require("request")
 const path = require('path')
 const express = require('express')

@@ -82,7 +82,7 @@ class UpDateUser extends Component {
         let id = this.state.clientId ? this.state.clientId : this.props.data.find(d => d.name === this.state.clientName)._id
         console.log(upDate, id)
 
-        await axios.put(`http://localhost:3030/upDateCustomerSold/${id}`, upDate)
+        await axios.put(`/upDateCustomerSold/${id}`, upDate)
     }
 
     updateEmail = async () => {
@@ -93,7 +93,7 @@ class UpDateUser extends Component {
         let id = this.state.clientId ? this.state.clientId : this.props.data.find(d => d.name === this.state.clientName)._id
         console.log(upDate, id)
 
-        await axios.put(`http://localhost:3030/upDateCustomerSold/${id}`, upDate)
+        await axios.put(`/upDateCustomerSold/${id}`, upDate)
     }
 
     updateSale =  async () => {
@@ -101,7 +101,7 @@ class UpDateUser extends Component {
         let id = this.state.clientId ? this.state.clientId : this.props.data.find(d => d.name === this.state.clientName)._id
         console.log(upDate, id)
 
-        await axios.put(`http://localhost:3030/upDateCustomerSold/${id}`, upDate)
+        await axios.put(`/upDateCustomerSold/${id}`, upDate)
     }
 
     render() {

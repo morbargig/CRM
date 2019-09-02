@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const res = await axios.get('http://localhost:3030/Customers')
+    const res = await axios.get('/Customers')
     console.log(res.data)
     this.setState({
       data: res.data,
@@ -46,7 +46,7 @@ class App extends Component {
 
     let upDate = { [key]: value }
     console.log(upDate, id)
-    await axios.put(`http://localhost:3030/upDateCustomerSold/${id}`, upDate)
+    await axios.put(`/upDateCustomerSold/${id}`, upDate)
   }
 
   createNewUser = async (obj) => {
@@ -70,7 +70,7 @@ class App extends Component {
     // })
 
     console.log(upDate, id)
-    await axios.put(`http://localhost:3030/upDateCustomer/${id}`, upDate)
+    await axios.put(`/upDateCustomer/${id}`, upDate)
 
     // console.log("kfdbbskjbkjsb")
     // this.myRender()
@@ -98,7 +98,7 @@ class App extends Component {
   }
 
   CreateNewClient = async (obj) => {
-    await axios.post(`http://localhost:3030/Customer`, obj)
+    await axios.post(`/Customer`, obj)
   }
 
   searchByCatgory = async (catagorySearch, text, ifValue) => {
@@ -110,7 +110,7 @@ class App extends Component {
       this.componentDidMount()
     } else {
       console.log(catagorySearch, text, typeof text)
-      let res = await axios.get(`http://localhost:3030/searchByCatagory/${catagorySearch}/${text}`)
+      let res = await axios.get(`/searchByCatagory/${catagorySearch}/${text}`)
       console.log(res.data)
       this.setState({
         data: res.data,

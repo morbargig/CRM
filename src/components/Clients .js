@@ -144,7 +144,7 @@ class Clients extends Component {
         let user = this.props.users.find(u => u._id === id)
         let answer = window.confirm(`are you sure you want to delete ${user.name}?`)
         if (answer === true) {
-            await axios.delete(`http://localhost:3030/deleteUser/${id}`)
+            await axios.delete(`/deleteUser/${id}`)
             console.log(id, user)
 
         }

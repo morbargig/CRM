@@ -12,7 +12,7 @@ class Analytics extends Component {
   }
 
   async componentDidMount() {
-    const res = await axios.get('http://localhost:3030/Customers')
+    const res = await axios.get('/Customers')
     console.log(res.data)
     this.setState({
       data: res.data

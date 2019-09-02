@@ -112,9 +112,9 @@ router.put('/upDateCustomer/:id', function (req, res) {
 
 // // pull some duumy data from some jason file and push it to my mongoseDB
 
-// setTimeout(() => {
-//     let data = require('../Data/data.json')
-//     data.map(d => new Customers(d).save())
-// }, 100)
+setTimeout(() => {
+    let data = require('../Data/data.json')
+    data.map(d => new Customers(d).save())
+}, 100)
 
 module.exports = router

@@ -41,6 +41,9 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/${DBname}`, { u
     app.listen(process.env.PORT || port, () => console.log(`Running server on port` + port))
 })
 
+// mongoose.connect('mongodb://heroku_n7kdwt0w:kgpt9881ljmupu1jhi6eokfo78@ds127531.mlab.com:27531/heroku_n7kdwt0w', { useNewUrlParser: true }).then(() => {
+//     app.listen(process.env.PORT || port, () => console.log(`Running server on port` + port))
+// })
 
 // Mongoose setup
 

@@ -34,8 +34,8 @@ app.get('*', function (req, res) {
 
 
 
-port = 3030
-DBname = DBNAME || 'CRM'
+let port = 3030
+let DBname = 'CRM'
 
 mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/${DBname}`, { useNewUrlParser: true }).then(() => {
     app.listen(process.env.PORT || port, () => console.log(`Running server on port` + port))

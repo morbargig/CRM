@@ -62,11 +62,11 @@ class Actions extends Component {
       {/* {["name","email"].map( i => <label>{i} <input name={`${i}`} type="text" value={this.state[i]} onChange={this.updeBesniiesText} placeholder={`${i}`} /> </label> )  } */}
       <label>Full Name</label> <input name="fullName" type="text" value={this.state.fullName} onChange={this.updateusersText} placeholder={"Full Name"} />
       <label>E-Mail</label>  <input name="EMail" type="text" value={this.state.EMail} onChange={this.updateusersText} placeholder={"E-Mail"} />
-      {/* <label>Email-Type</label><input name="emailType" type="text" value={this.state.emailType} onChange={this.updateusersText} placeholder={"Email-Type "} /> */}
+      <label>Email-Type</label><input name="emailType" type="text" value={this.state.emailType} onChange={this.updateusersText} placeholder={"Email-Type "} />
       <label>Owner</label><input name="owner" type="text" value={this.state.owner} onChange={this.updateusersText} placeholder={"Owner "} />
       <label>Country</label> <input name="country" type="text" value={this.state.country} onChange={this.updateusersText} placeholder={"Country "} />
       <label>Sold</label> <input name="Sold" type="text" value={this.state.Sold} onChange={this.updateusersText} placeholder={"Sold *must be 'true' or 'false'!"} />
-      {/* <button onClick={this.createNewUser}>Add New User <i class="material-icons right">send</i> </button> */}
+      <button onClick={this.createNewUser}>Add New User <i class="material-icons right">send</i> </button>
 
     </div>
 

@@ -122,4 +122,5 @@ router.put('/upDateCustomer/:id', function (req, res) {
 //     data.map(d => new Customers(d).save())
 // }, 100)
 
+
 module.exports = router

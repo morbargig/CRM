@@ -1,3 +1,4 @@
-const route = 'http://localhost:3030/'
-//http://localhost:8000/
+// const route = 'http://localhost:3030/'
+const route = '/'
+
 export default route

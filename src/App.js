@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Clients from './components/Clients ';
 import Actions from './components/Actions';
 import Analytics from './components/Analytics';
+import route from '../src/components/config/mor'
+// import { format } from 'url';
 
 class App extends Component {
   constructor() {
@@ -19,7 +21,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const res = await axios.get('/Customers')
+    const res = await axios.get(`${route}Customers`)
     console.log(res.data)
     this.setState({
       data: res.data,
@@ -46,7 +48,7 @@ class App extends Component {
 
     let upDate = { [key]: value }
     console.log(upDate, id)
-    await axios.put(`/upDateCustomerSold/${id}`, upDate)
+    await axios.put(`${route}upDateCustomerSold/${id}`, upDate)
   }
 
   createNewUser = async (obj) => {
@@ -70,7 +72,7 @@ class App extends Component {
     // })
 
     console.log(upDate, id)
-    await axios.put(`/upDateCustomer/${id}`, upDate)
+    await axios.put(`${route}upDateCustomer/${id}`, upDate)
 
     // console.log("kfdbbskjbkjsb")
     // this.myRender()
@@ -98,7 +100,7 @@ class App extends Component {
   }
 
   CreateNewClient = async (obj) => {
-    await axios.post(`/Customer`, obj)
+    await axios.post(`${route}Customer`, obj)
   }
 
   searchByCatgory = async (catagorySearch, text, ifValue) => {
@@ -110,7 +112,7 @@ class App extends Component {
       this.componentDidMount()
     } else {
       console.log(catagorySearch, text, typeof text)
-      let res = await axios.get(`/searchByCatagory/${catagorySearch}/${text}`)
+      let res = await axios.get(`${route}searchByCatagory/${catagorySearch}/${text}`)
       console.log(res.data)
       this.setState({
         data: res.data,
@@ -145,12 +147,32 @@ class App extends Component {
     })
 
   }
+
+
+  openMenu = () => {
+    let x = this.state.openMenu
+    this.setState({ openMenu: !x })
+  }
   render() {
 
     return (
       <Router>
-        <nav>
-          <div class="nav-wrapper navBar">
+        <div className="topnav">
+          <a onClick={this.openMenu} className="active"><Link >Menu</Link></a>
+
+          {this.state.openMenu ?
+            <div id="myLinks">
+              {/* <ul id="nav-mobile" class="left hide-on-med-and-down"> */}
+
+              <a ><Link to="/clients">Clients  </Link></a>
+              <a ><Link to="/actions" >Actions  </Link></a>
+              <a ><Link to="/analytics">Analytics </Link></a>
+            </div>
+            :
+            <a className="right" ><Link to="/clients" >CRM</Link> </a>
+          } </div>
+        {/* <nav> */}
+        {/* <div class="nav-wrapper navBar">
             <a href="" class="brand-logo right">CRM</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
               <li ><Link to="/clients">Clients  </Link></li>
@@ -158,16 +180,13 @@ class App extends Component {
               <li ><Link to="/analytics">Analytics </Link></li>
             </ul>
           </div>
-        </nav>
+        </nav> */}
+
+        {/* <Route path="/" render={() => this.state.users ? <Clients upDateUsers={this.upDateUsers} refreseClient={this.refreseClient} searchByCatgory={this.searchByCatgory} createNewUser={this.createNewUser} isSold={this.isSold} page={this.state.page} users={this.state.users} moreUsers={this.moreUsers} data={this.state.data} /> : null} /> */}
         <Route path="/clients" render={() => this.state.users ? <Clients upDateUsers={this.upDateUsers} refreseClient={this.refreseClient} searchByCatgory={this.searchByCatgory} createNewUser={this.createNewUser} isSold={this.isSold} page={this.state.page} users={this.state.users} moreUsers={this.moreUsers} data={this.state.data} /> : null} />
         <Route path="/actions" render={() => <Actions CreateNewClient={this.CreateNewClient} data={this.state.data} />} />
         <Route path="/analytics" render={() => <Analytics data={this.state.data} />} />
-        {/* <Route path="/Moveis/:id" exact render={() => <Catalog movies={this.state.movies} isRented={this.isRented} />} /> */}
 
-        {/* <Route path="/Catalog/:id" exact render={({ match }) => (this.state[match.params.id] ? (<Catalog match={match} state={this.state} />) : (<Landing />))} /> */}
-        {/* <a onClick={this.isRented}> sfhfjdnkbjdsnfkbjndsfk</a> */}
-
-        {/* <Route /> */}
       </Router>
     );
   }

@@ -104,17 +104,26 @@ class Badges extends Component {
     render() {
         return <Router>
             {/* <div> */}
-            <nav>
+            <div className="topnav an">
+
+                <div id="myLinks2">
+
+                    <a ><Link to="/analytics/BestOwner">Best Owner</Link></a>
+                    <a ><Link to="/analytics/HottestCountry">Hottest Country</Link></a>
+                    <a ><Link to="/analytics/NewClientGraf">new Month Client </Link></a>
+                    <a ><Link to="/analytics/Pie">New Month Client</Link></a>
+                </div>
+            </div>
+            {/* <nav>
                 <div class="nav-wrapper navbar">
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        {/* <li><a href="http://localhost:3000/analytics/BestOwner">Best Owner</a></li> */}
                         <li ><Link to="/analytics/BestOwner">Best Owner</Link></li>
                         <li ><Link to="/analytics/HottestCountry">Hottest Country</Link></li>
                         <li ><Link to="/analytics/NewClientGraf">new Month Client </Link></li>
                         <li ><Link to="/analytics/Pie">New Month Client</Link></li>
                     </ul>
                 </div>
-            </nav>
+            </nav> */}
             <div className="badges" >
                 <div className="bage">
                     <i id='awsomeProgress' class="fas fa-chart-line"></i>

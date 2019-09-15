@@ -150,6 +150,63 @@ tr{
   text-align: center;
   position: relative
 } */
-.navbar{
+/* .navbar{
   background-color: cadetblue
+} */
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
 }
+
+.topnav a {
+  float: left;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a.Admin {
+  float: right;
+  background-color: black
+}
+
+.topnav a.logo {
+  float: right;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.an {
+  overflow: hidden;
+  background-color: cornflowerblue;
+  position: relative;
+}
+/* 
+.topnav a {
+  float: left;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a.Admin {
+  float: right;
+  background-color: black
+}
+
+.topnav a.logo {
+  float: right;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+} */

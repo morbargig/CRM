@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NewUser from './NewUser';
-import axios from 'axios'
+import axios from 'axios';
+import route from './config/mor'
 
 
 
@@ -140,18 +141,19 @@ class Clients extends Component {
 
 
     delete = async (e) => {
+        console.log("gfdgd")
         let id = e.target.parentElement.id
         let user = this.props.users.find(u => u._id === id)
         let answer = window.confirm(`are you sure you want to delete ${user.name}?`)
         if (answer === true) {
-            await axios.delete(`/deleteUser/${id}`)
+            await axios.delete(`${route}deleteUser/${id}`)
             console.log(id, user)
 
         }
     }
 
     upDateUsers = (obj) => {
-        this.props.upDateUsers(obj,this.state.userToUpdateId)
+        this.props.upDateUsers(obj, this.state.userToUpdateId)
     }
 
     render() {
@@ -199,7 +201,7 @@ class Clients extends Component {
                 {
                     this.props.users.map(u => {
                         return (
-                            <tr className='rowClass' id={u._id} on onDoubleClick={this.getNewUser} onKeyDown={this.handleKeyDown} onContextMenu={this.delete}>
+                            <tr className='rowClass' id={u._id} on onDoubleClick={this.getNewUser} onClick={this.handleKeyDown} onContextMenu={this.delete}>
                                 <td className='tdClass'>{u.name}</td>
                                 <td className='tdClass'>{u.email}</td>
                                 <td className='tdClass'>{u.firstContact.slice(0, 10)}</td>

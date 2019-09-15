@@ -49,6 +49,7 @@ export default class HottestCountry extends PureComponent {
                 data.push(a)
             }
             // let data = [...data]
+            // data = data
             data = data.sort(function (a, b) { return b.Sales - a.Sales })
             console.log(data)
             // this.setState({data})
@@ -108,7 +109,11 @@ export default class HottestCountry extends PureComponent {
             // let lastMonthUsers = 0
             let obj = {}
             let users = this.props.data.filter(d => d.firstContact.slice(0, 4) === year)
-            users = users.sort(function (a, b) { return b.firstContact.slice(5, 7) - a.firstContact.slice(5, 7) })
+            function sortNumber(a, b) {
+                return parseInt(a.firstContact.slice(5, 7)) - parseInt(b.firstContact.slice(5, 7));
+            }
+            users.sort(sortNumber);
+            // users = users.sort(function (a, b) { return parseInt(b.firstContact.slice(5, 7)) - parseInt(a.firstContact.slice(5, 7)) })
             users.map(d => obj[d.firstContact.slice(5, 7)] = 0)
             users.map(d => obj[d.firstContact.slice(5, 7)] += 1)
             console.log(obj)

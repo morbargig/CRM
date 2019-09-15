@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Badges from './Badges';
 import axios from 'axios'
+import route from './config/mor'
 
 
 class Analytics extends Component {
@@ -12,7 +13,7 @@ class Analytics extends Component {
   }
 
   async componentDidMount() {
-    const res = await axios.get('/Customers')
+    const res = await axios.get(`${route}Customers`)
     console.log(res.data)
     this.setState({
       data: res.data

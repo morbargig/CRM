@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+// import { request } from 'http';
+import route from './config/mor'
 
 
 class UpDateUser extends Component {
@@ -82,7 +84,7 @@ class UpDateUser extends Component {
         let id = this.state.clientId ? this.state.clientId : this.props.data.find(d => d.name === this.state.clientName)._id
         console.log(upDate, id)
 
-        await axios.put(`/upDateCustomerSold/${id}`, upDate)
+        await axios.put(`${route}upDateCustomerSold/${id}`, upDate)
     }
 
     updateEmail = async () => {
@@ -93,7 +95,7 @@ class UpDateUser extends Component {
         let id = this.state.clientId ? this.state.clientId : this.props.data.find(d => d.name === this.state.clientName)._id
         console.log(upDate, id)
 
-        await axios.put(`/upDateCustomerSold/${id}`, upDate)
+        await axios.put(`${route}upDateCustomerSold/${id}`, upDate)
     }
 
     updateSale =  async () => {
@@ -101,7 +103,7 @@ class UpDateUser extends Component {
         let id = this.state.clientId ? this.state.clientId : this.props.data.find(d => d.name === this.state.clientName)._id
         console.log(upDate, id)
 
-        await axios.put(`/upDateCustomerSold/${id}`, upDate)
+        await axios.put(`${route}upDateCustomerSold/${id}`, upDate)
     }
 
     render() {

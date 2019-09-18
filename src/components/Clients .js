@@ -58,7 +58,7 @@ class Clients extends Component {
 
     getNewUser = (e) => {
         let id = e.target.parentElement.id
-        console.log(id)
+        // console.log(id)
         let x = this.state.newUser
         x = !x
         let users = this.props.users
@@ -69,7 +69,7 @@ class Clients extends Component {
             userToUpdate: userToUpdate,
             newUser: x
         })
-        console.log(this.state, this.state.userToUpdate)
+        // console.log(this.state, this.state.userToUpdate)
     }
 
     // setNewUsr = (obj) => {
@@ -95,16 +95,17 @@ class Clients extends Component {
         this.setState({
             [name]: text
         }, function () {
-            console.log(this.state)
+            // console.log(this.state)
             // let input = this.state[name]
             // console.log(name)
             if (this.state.catagorySearch !== undefined) {
                 // console.log("don't work")
                 let catagorySearch = this.state.catagorySearch
-                console.log(this.state.catagorySearch)
+                // console.log(this.state.catagorySearch)
                 let ifValue = true
                 if (text === '') {
                     ifValue = false
+                    this.searchByCatgory(catagorySearch, text, ifValue)
                     // console.log(text, typeof text)
                 } else {
                     this.searchByCatgory(catagorySearch, text, ifValue)
@@ -170,7 +171,7 @@ class Clients extends Component {
                         <select id="select-input" className="option-menu">
                         
                     </select> */}
-                    <td className='tdClassMain'>    <input name="input" type="text" value={this.state.fullName} onChange={this.updateusersText} placeholder="type here" />
+                    <td className='tdClassMain'>    <input name="searchInput" type="text" value={this.state.searchInput} onChange={this.updateusersText} placeholder="type here" />
                     </td>
                     <td className='tdClassMain'>
                         <select class="browser-default" onClick={this.catagorySearch}>

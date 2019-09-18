@@ -174,7 +174,7 @@ class Clients extends Component {
                     <td className='tdClassMain'>    <input name="searchInput" type="text" value={this.state.searchInput} onChange={this.updateusersText} placeholder="type here" />
                     </td>
                     <td className='tdClassMain'>
-                        <select class="browser-default" onClick={this.catagorySearch}>
+                        <select class="browser-default" onChange={this.catagorySearch}>
                             <option value="Catgory" disabled selected>select a Category</option>
                             <option value="name">full name</option>
                             <option value="email">E-Mail </option>

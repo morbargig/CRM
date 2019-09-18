@@ -119,12 +119,12 @@ class App extends Component {
         users: res.data.slice(0, 20)
       }, function () {
         console.log(this.state.data)
-        if (typeof text === "string" && text === "") {
-          console.log("gfdgfdbgkjbdkgbkdj")
-          this.setState({
-            users: this.state.data.slice(0, 20)
-          })
-        }
+        // if (typeof text === "string" && text === "") {
+        //   console.log("gfdgfdbgkjbdkgbkdj")
+        //   this.setState({
+        //     users: this.state.data.slice(0, 20)
+        //   })
+        // }
       })
     }
   }

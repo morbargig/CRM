@@ -130,12 +130,11 @@ export default class HottestCountry extends PureComponent {
         return (<div>
             <h6>Sales by variable  </h6>
 
-            <select className="select-input" class="browser-default" onChange={this.upDateGrafh} >
-
-                <option value={"country"}>{"Country"}</option>
-                <option value={"owner"}>{"Owner"}</option>
-                <option value={"emailType"}>{"emailType"}</option>
-                <option value={"month"}>{"Month"}</option>
+            <select className="select-input" className="browser-default" onChange={this.upDateGrafh} >
+                <option value="country">Country</option>
+                <option value="owner">Owner</option>
+                <option value="emailType">Email Type</option>
+                <option value="month">"Month"</option>
             </select>
             <BarChart
                 width={500}

@@ -35,7 +35,18 @@ tr{
   grid-template-rows: repeat(3,1fr)
 } */
 .actions{
-  width: 70%
+  width: 70%;
+  padding: 15px;
+  
+}
+ .bage i{
+  line-height: 75px;
+
+}
+
+.bage a{
+margin-left: 3vw;
+  
 }
 
 /* input{
@@ -52,11 +63,12 @@ tr{
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: navajowhite;
+  background-color: #3e372b;
   border-style: solid;
   border-width: 3px;
   opacity: 0.95;
   color: #0a1612;
+  padding: 15px;
 }
 
 #horns{
@@ -210,3 +222,31 @@ tr{
   background-color: #ddd;
   color: black;
 } */
+
+/* .material-icons {
+cursor: pointer;
+} */
+
+.tdClass.sold i{
+cursor: pointer;
+}
+.clientTable.popup{
+  pointer-events: none ; 
+}
+
+.newUser{
+pointer-events: all;
+z-index: 99999;
+}
+
+#popup{
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: black;
+  opacity: 0.6;
+  /* pointer-events: none; */
+  display: block;
+  z-index: 9999;
+}

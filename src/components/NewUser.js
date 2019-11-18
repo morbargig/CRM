@@ -98,7 +98,7 @@ class NewUser extends Component {
     // id={this.state.userToUpdateId} userToUpdate={this.userToUpdate} newUser={this.state.newUser}
 
     render() {
-        return <div class="newUser">
+        return <div className="newUser" id="newUser2">
             {/* {u = this.props.userToUpdate} */}
             <label>Full Name</label><input name="fullName" type="text" value={this.state.fullName} onChange={this.updateusersText} placeholder={`full Name was "${this.props.userToUpdate.name}" before`} />
             {/* <input name="lastName" type="text" value={this.state.lastName} onChange={this.updateusersText} placeholder={"Last Name was " + this.props.userToUpdate.name + ' before'} /> */}

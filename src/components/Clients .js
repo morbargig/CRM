@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NewUser from './NewUser';
 import axios from 'axios';
 import route from './config/mor'
+import { all } from 'q';
 
 
 
@@ -67,8 +68,11 @@ class Clients extends Component {
         this.setState({
             userToUpdateId: id,
             userToUpdate: userToUpdate,
-            newUser: x
-        })
+            newUser: x,
+            popup: !this.state.popup
+        }, function () { console.log(this.state.popup) })
+
+
         // console.log(this.state, this.state.userToUpdate)
     }
 
@@ -84,7 +88,9 @@ class Clients extends Component {
         let x = this.state.newUser
         x = !x
         this.setState({
-            newUser: x
+            newUser: x,
+            popup : !this.state.popup
+            
         })
     }
 
@@ -157,14 +163,28 @@ class Clients extends Component {
         this.props.upDateUsers(obj, this.state.userToUpdateId)
     }
 
+    popup = (e) =>{
+    console.log(e.target.parentElement,e.target.parentElement.id)
+    // document.getElementById(e.target.parentElement)
+    if (e.target.parentElement.id !== "newUser2" ){
+        this.setState({ 
+            newUser : !this.state.newUser,
+            popup : !this.state.popup
+        })
+    }
+    }
+
     render() {
-        return <div>
+        return <div name="notnewuser" onClick= {this.state.popup ?  this.popup : null} 
+        // style={this.state.popup ?  {pointerEvents : "none"} : {pointerEvents : "all"}} 
+         >
+            <div  id={this.state.popup ? "popup" : null}
+            ></div>
             {
                 this.state.newUser ? <NewUser upDateUsers={this.upDateUsers} users={this.state.users} afterSendNewUser={this.afterSendNewUser} id={this.state.userToUpdateId} userToUpdate={this.state.userToUpdate} createNewUser={this.props.createNewUser} newUser={this.state.newUser} />
                     : null
             }
-
-            < table className="clientTable" >
+            < table className={this.state.popup ? "clientTable popup" : "clientTable"}  >
                 <tr className="nestLeft">
                     <td className='tdClassMain'> <button class="waves-effect waves-light btn" onClick={this.refreseClient}> <i class="material-icons left">refresh</i>refresh Clients</button></td>
                     {/* <input placeholder="Catgory" />
@@ -195,7 +215,7 @@ class Clients extends Component {
                     <td className='tdClassMain' >E-Mail <i class="material-icons left">email</i></td>
                     <td className='tdClassMain'>First Contact <i class="material-icons left">access_time</i></td>
                     <td className='tdClassMain'>E-mail Type</td>
-                    <td className='tdClassMain'>Sold <i class="material-icons left">business_center</i></td>
+                    <td className='tdClassMain'   >Sold <i class="material-icons left">business_center</i></td>
                     <td className='tdClassMain'>Owner</td>
                     <td className='tdClassMain'>Country <i class="material-icons left">location_city</i></td>
                 </tr>
@@ -207,7 +227,7 @@ class Clients extends Component {
                                 <td className='tdClass'>{u.email}</td>
                                 <td className='tdClass'>{u.firstContact.slice(0, 10)}</td>
                                 <td className='tdClass'>{u.emailType ? u.emailType : "_"}</td>
-                                <td className='tdClass'>{u.sold ? <i id={u._id} onClick={this.isSold} class="material-icons left green">done</i> || "Yes" : <i id={u._id} onClick={this.isSold} class="material-icons left red">clear</i> || "No"}</td>
+                                <td className='tdClass sold'>{u.sold ? <i id={u._id} onClick={this.isSold} class="material-icons left green">done</i> || "Yes" : <i id={u._id} onClick={this.isSold} class="material-icons left red">clear</i> || "No"}</td>
                                 <td className='tdClass'>{u.owner}</td>
                                 <td className='tdClass'>{u.country}</td>
                             </tr>

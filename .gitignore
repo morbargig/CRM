@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 #private stuff
-mor.text
+mor
 
 # dependencies
 /node_modules

@@ -7,19 +7,31 @@ Customer Relationship Management tool that allows companies to manage everything
 
 ### Pictures
 
-#### Landing page
+#### Action
 
-![alt text](./photos/action)
+![alt text](./photos/action.png)
 
-#### My Skills
+#### Search by field
 
-![alt text](https://raw.githubusercontent.com/morbargig/morbargig/master/images/readme/Screenshot%20(46).png)
+![alt text](./photos/search.png)
 
-#### My Projects
+#### clik on the Sold to change 
 
-![alt text](https://raw.githubusercontent.com/morbargig/morbargig/master/images/readme/Screenshot%20(47).png)
+![alt text](./photos/Sold.png)
 
-#### Contact 
+#### right click to delete the user
 
-![alt text](https://raw.githubusercontent.com/morbargig/morbargig/master/images/readme/Screenshot%20(48).png)
+![alt text](./photos/delete.png)
+
+#### double click to update the user
+
+![alt text](./photos/updateUser.png)
+
+####  graphs page
+
+![alt text](./photos/graphs.png)
+
+#### pie graph
+
+![alt text](./photos/pie.png)
 

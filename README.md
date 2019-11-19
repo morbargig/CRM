@@ -15,17 +15,17 @@ Customer Relationship Management tool that allows companies to manage everything
 
 ![alt text](./photos/search.png)
 
-#### clik on the Sold to change 
+#### click on the Sold to change it
 
 ![alt text](./photos/Sold.png)
-
-#### right click to delete the user
-
-![alt text](./photos/deleteUser.png)
 
 #### double click to update the user
 
 ![alt text](./photos/updateUser.png)
+
+#### right click to delete the user
+
+![alt text](./photos/deleteUser.png)
 
 ####  graphs page
 

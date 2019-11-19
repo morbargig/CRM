@@ -21,7 +21,7 @@ Customer Relationship Management tool that allows companies to manage everything
 
 #### right click to delete the user
 
-![alt text](./photos/delete.png)
+![alt text](./photos/deleteUser.png)
 
 #### double click to update the user
 

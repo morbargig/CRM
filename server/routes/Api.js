@@ -210,7 +210,7 @@ setTimeout(() => {
         i++
     }
     console.log(data)
-    Customers.remove()
+    Customers.deleteMany({})
     data.map(d => new Customers(d).save())
 }, 10000)
 

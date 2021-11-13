@@ -200,7 +200,7 @@ setTimeout(() => {
         console.log()
         const temp = temps[randomIntFromInterval(1, temps.length - 1)]
         const rndInt = () => randomIntFromInterval(1, 6)
-        data?.push({
+        data.push({
             ...temp,
             [Object.keys(temp)[rndInt()]]: temp[[Object.keys(temp)[rndInt()]]],
             [Object.keys(temp)[rndInt()]]: temp[[Object.keys(temp)[rndInt()]]],
@@ -209,7 +209,7 @@ setTimeout(() => {
         i++
     }
     console.log(data)
-    data?.map(d => ({})).map(d => new Customers(d).save())
+    data.map(d => ({})).map(d => new Customers(d).save())
 }, 10000)
 
 

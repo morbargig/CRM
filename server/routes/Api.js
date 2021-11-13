@@ -46,6 +46,7 @@ router.get('/searchByCatagory/:Catagory/:text', (req, res) => {
         })
     }
     else {
+        Customers.delete({})
         Customers.find({}, function (err, x) {
             let result = []
             x.map(u => u[Catagory].includes(text) ? result.push(u) : null)
@@ -209,7 +210,8 @@ setTimeout(() => {
         i++
     }
     console.log(data)
-    data.map(d => ({})).map(d => new Customers(d).save())
+    Customers.delete({})
+    data.map(d => new Customers(d).save())
 }, 10000)
 
 

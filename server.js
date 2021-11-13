@@ -6,7 +6,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const router = require('./src/Server/routes/Api')
+const router = require('./server/routes/Api')
 
 // const request = require("request")
 app.use(bodyParser.json())
@@ -24,32 +24,16 @@ app.use(function (req, res, next) {
 
 app.use(express.static(path.join(__dirname, 'build')))
 
-
 app.use("/", router)
 
 app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
+const port = process.env.PORT || 3030
+const DBname = 'CRM'
+const MongoDBUriI = process.env.MONGODB_URI || `mongodb://localhost/${DBname}`
 
-
-
-let port = 3030
-let DBname = 'CRM'
-
-mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/${DBname}`, { useNewUrlParser: true }).then(() => {
+mongoose.connect(MongoDBUriI, { useNewUrlParser: true }).then(() => {
     app.listen(process.env.PORT || port, () => console.log(`Running server on port` + port))
 })
-
-// mongoose.connect('mongodb://heroku_n7kdwt0w:kgpt9881ljmupu1jhi6eokfo78@ds127531.mlab.com:27531/heroku_n7kdwt0w', { useNewUrlParser: true }).then(() => {
-//     app.listen(process.env.PORT || port, () => console.log(`Running server on port` + port))
-// })
-
-// Mongoose setup
-
-// //use setTimeout to simulate an API call - you can, of course, do this without the setTimeout, but using setTimeout will simplify your transition to connecting your to your server later on
-
-// setTimeout(() => {
-//     let data = require('../data.json')
-//     //populate state with data
-//   }, 100)

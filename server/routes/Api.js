@@ -217,10 +217,7 @@ setTimeout(() => {
         i++
     }
     console.log(data)
-    Customers.remove()
-    Customers.deleteMany({})
-    Customers.remove({})
-    Customers.drop()
+    Customers.remove({}, ()=>null)
     data.map(d => new Customers(d).save())
 }, 10000)
 

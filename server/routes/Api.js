@@ -122,7 +122,7 @@ setTimeout(() => {
     const temps = [{
         name: 'mor bargig',
         email: 'morbargig@gmail.com',
-        firstContact: 'mor bargig',
+        firstContact: '2002-12-09',
         emailType: 'A',
         sold: true,
         owner: "mor bargig",
@@ -131,7 +131,7 @@ setTimeout(() => {
     {
         name: 'bar mor',
         email: 'test@gmail.com',
-        firstContact: 'bar david',
+        firstContact: '2002-15-03',
         emailType: 'B',
         sold: true,
         owner: "oren dvir",
@@ -140,7 +140,7 @@ setTimeout(() => {
     {
         name: 'ronen amar',
         email: 'ronen@gmail.com',
-        firstContact: 'amit tamar',
+        firstContact: '2002-05-09',
         emailType: 'A',
         sold: true,
         owner: "roni dror",
@@ -149,7 +149,7 @@ setTimeout(() => {
     {
         name: 'noa yogev',
         email: 'noa@gmail.com',
-        firstContact: 'yuval rotem',
+        firstContact: '2002-12-02',
         emailType: 'A',
         sold: true,
         owner: "daniela peretz",
@@ -158,7 +158,7 @@ setTimeout(() => {
     {
         name: 'liel linoy',
         email: 'liell@gmail.com',
-        firstContact: 'linoy choen',
+        firstContact: '2020-12-02',
         emailType: 'D',
         sold: true,
         owner: "shlomi baruch",
@@ -167,7 +167,7 @@ setTimeout(() => {
     {
         name: 'michael catz',
         email: 'micahelC@gmail.com',
-        firstContact: 'alon rehoven',
+        firstContact: '1990-03-02',
         emailType: 'F',
         sold: true,
         owner: "shir avraham",
@@ -176,9 +176,9 @@ setTimeout(() => {
     {
         name: 'lian mualem',
         email: 'lian@gmail.com',
-        firstContact: 'gil lhiany',
+        firstContact: '1989-07-02',
         emailType: 'F',
-        sold: true,
+        sold: false,
         owner: "matan choen",
         country: "Shinay"
     },
@@ -187,7 +187,7 @@ setTimeout(() => {
         email: 'lian@gmail.com',
         firstContact: 'adi keren',
         emailType: 'F',
-        sold: true,
+        sold: false,
         owner: "alia amit",
         country: "Russian"
     }
@@ -197,16 +197,23 @@ setTimeout(() => {
     function randomIntFromInterval(min, max) { // min and max included 
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
-    while (i < 700) {
-        console.log()
-        const temp = temps[randomIntFromInterval(1, temps.length - 1)]
-        const rndInt = () => randomIntFromInterval(1, 6)
-        data.push({
-            ...temp,
-            [Object.keys(temp)[rndInt()]]: temp[[Object.keys(temp)[rndInt()]]],
-            [Object.keys(temp)[rndInt()]]: temp[[Object.keys(temp)[rndInt()]]],
-            [Object.keys(temp)[rndInt()]]: temp[[Object.keys(temp)[rndInt()]]],
+    const temp = {
+        name: [],
+        email: [],
+        firstContact: [],
+        emailType: [],
+        sold: [],
+        owner: [],
+        country: []
+    }
+    temps.forEach(i => {
+        Object.keys(i).forEach(t => {
+            temp[t].push(i[t])
         })
+    })
+    while (i < 700) {
+        const rndInt = () => randomIntFromInterval(1, 6)
+        data.push(Object.keys(temp).reduce((p, c) => ({ ...p, [c]: temp[c][randomIntFromInterval(1, 6)] }), {}))
         i++
     }
     console.log(data)

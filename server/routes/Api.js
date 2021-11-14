@@ -185,7 +185,7 @@ setTimeout(() => {
     {
         name: 'hen bar zhoer',
         email: 'lian@gmail.com',
-        firstContact: 'adi keren',
+        firstContact: '1989-07-02',
         emailType: 'F',
         sold: false,
         owner: "alia amit",
@@ -213,11 +213,11 @@ setTimeout(() => {
     })
     while (i < 700) {
         const rndInt = () => randomIntFromInterval(1, 6)
-        data.push(Object.keys(temp).reduce((p, c) => ({ ...p, [c]: temp[c][randomIntFromInterval(1, 6)] }), {}))
+        data.push(Object.keys(temp).reduce((p, c) => ({ ...p, [c]: temp[c][rndInt()] }), {}))
         i++
     }
     console.log(data)
-    Customers.remove()
+    Customers.remove({})
     data.map(d => new Customers(d).save())
 }, 10000)
 
